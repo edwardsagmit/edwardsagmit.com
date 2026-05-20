@@ -1,35 +1,43 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+
+  /* background look */
   background: radial-gradient(circle at center, #1e2a3a 0%, #0f172a 70%);
-  color: #e5e7eb;
+  
+  color: #e5e7eb; /* main text */
 }
 
 header {
   text-align: center;
+
   padding: 20px 20px 20px;
+  /*        top   sides bottom */
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 48px; /* main name size */
   margin: 0;
   font-weight: 600;
 }
 
 header p {
-  margin-top: 10px;
+  margin-top: 10px; /* space under name */
   color: #94a3b8;
 }
 
 nav {
-  margin-top: 40px;
+  margin-top: 40px; /* space between tagline & nav */
+
   border-top: 1px solid #1f2937;
   border-bottom: 1px solid #1f2937;
-  padding: 15px 0;
+
+  padding: 15px 0; /* vertical nav padding */
 }
 
 nav a {
-  margin: 0 15px;
+  margin: 0 15px; /* spacing between links */
+
   text-decoration: none;
   color: #cbd5f5;
   font-size: 14px;
@@ -41,35 +49,93 @@ nav a:hover {
 
 main {
   text-align: center;
-  padding: 20px 20px;
+
+  padding: 20px 20px; 
+  /*        vertical  horizontal */
 }
 
 main h2 {
-  font-size: 42px;
+  font-size: 42px; /* headline size */
   margin-bottom: 20px;
 }
 
 main p {
-  max-width: 600px;
+  max-width: 600px; /* keeps text readable */
   margin: auto;
+
   color: #9ca3af;
   line-height: 1.6;
 }
 
 .hero {
-  margin: 30px auto;
-  max-width: 900px;
+  margin: 30px auto; /* space around image */
+  max-width: 900px;  /* controls width */
 }
 
 .hero img {
-  width: 100%;
+  width: 100%; /* responsive image */
   border-radius: 6px;
 }
 
 footer {
   text-align: center;
-  padding: 40px 20px;
+
+  padding: 40px 20px; /* footer spacing */
+
   border-top: 1px solid #1f2937;
+
   font-size: 14px;
   color: #9ca3af;
+}
+
+
+
+
+
+
+
+
+/* ========================= */
+/* ✅ MOBILE / SMALL SCREENS */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 32px;
+    /* smaller name */
+  }
+
+  main h2 {
+    font-size: 26px;
+    /* smaller headline */
+  }
+
+  nav {
+    margin-top: 20px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+    /* stack nav vertically */
+  }
+
+  header {
+    padding: 15px 15px 10px;
+    /* tighter header */
+  }
+
+  main {
+    padding: 15px 15px;
+    /* less whitespace */
+  }
+
+  .hero {
+    margin: 20px auto;
+  }
+
+  footer {
+    padding: 20px 15px;
+  }
 }
