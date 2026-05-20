@@ -27,17 +27,16 @@ header p {
 }
 
 nav {
-  margin-top: 40px; /* space between tagline & nav */
+  margin-top: 40px;
 
   border-top: 1px solid #1f2937;
   border-bottom: 1px solid #1f2937;
 
-  padding: 15px 0; /* vertical nav padding */
+  padding: 15px 0;
 }
 
 nav a {
-  margin: 0 15px; /* spacing between links */
-
+  margin: 0 15px;
   text-decoration: none;
   color: #cbd5f5;
   font-size: 14px;
@@ -50,17 +49,16 @@ nav a:hover {
 main {
   text-align: center;
 
-  padding: 20px 20px; 
-  /*        vertical  horizontal */
+  padding: 20px 20px;
 }
 
 main h2 {
-  font-size: 42px; /* headline size */
+  font-size: 42px;
   margin-bottom: 20px;
 }
 
 main p {
-  max-width: 600px; /* keeps text readable */
+  max-width: 600px;
   margin: auto;
 
   color: #9ca3af;
@@ -68,31 +66,25 @@ main p {
 }
 
 .hero {
-  margin: 30px auto; /* space around image */
-  max-width: 900px;  /* controls width */
+  margin: 30px auto;
+  max-width: 900px;
 }
 
 .hero img {
-  width: 100%; /* responsive image */
+  width: 100%;
   border-radius: 6px;
 }
 
 footer {
   text-align: center;
 
-  padding: 40px 20px; /* footer spacing */
+  padding: 40px 20px;
 
   border-top: 1px solid #1f2937;
 
   font-size: 14px;
   color: #9ca3af;
 }
-
-
-
-
-
-
 
 
 /* ========================= */
@@ -103,32 +95,18 @@ footer {
 
   h1 {
     font-size: 32px;
-    /* smaller name */
   }
 
   main h2 {
     font-size: 26px;
-    /* smaller headline */
-  }
-
-  nav {
-    margin-top: 20px;
-  }
-
-  nav a {
-    display: block;
-    margin: 10px 0;
-    /* stack nav vertically */
   }
 
   header {
     padding: 15px 15px 10px;
-    /* tighter header */
   }
 
   main {
     padding: 15px 15px;
-    /* less whitespace */
   }
 
   .hero {
@@ -137,5 +115,37 @@ footer {
 
   footer {
     padding: 20px 15px;
+  }
+
+  /* ✅ FIXED NAV (HORIZONTAL) */
+  nav {
+    margin-top: 20px;
+
+    display: flex;
+    /* force horizontal */
+
+    overflow-x: auto;
+    /* allows sideways scroll */
+
+    white-space: nowrap;
+    /* prevent wrapping */
+
+    gap: 15px;
+    /* spacing between items */
+
+    padding: 10px 10px;
+  }
+
+  nav a {
+    margin: 0;
+    /* remove old spacing */
+
+    flex-shrink: 0;
+    /* prevents items from shrinking */
+  }
+
+  /* ✅ OPTIONAL: hide scroll bar (cleaner look) */
+  nav::-webkit-scrollbar {
+    display: none;
   }
 }
