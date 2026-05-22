@@ -135,7 +135,10 @@ nav a:hover {
   transition:
     background 0.25s ease,
     border-color 0.25s ease,
-    transform 0.2s ease;
+    right 0.25s ease,
+    bottom 0.25s ease,
+    transform 0.25s ease;
+  /* added right/bottom transition so mobile browser bar movement feels smoother */
 }
 
 .theme-toggle:hover {
@@ -354,10 +357,18 @@ footer {
     right: 16px;
 
     bottom: calc(20px + env(safe-area-inset-bottom));
-    /* increases bottom clearance on mobile */
+    /* mobile bottom clearance */
 
     width: 66px;
     height: 36px;
+
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      right 0.25s ease,
+      bottom 0.35s ease,
+      transform 0.25s ease;
+    /* slightly slower bottom movement on mobile */
   }
 
   .toggle-circle {
