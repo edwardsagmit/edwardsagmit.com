@@ -67,8 +67,8 @@ footer {
   width: 100%;
   box-sizing: border-box;
 
-  padding: 18px 24px;
-  font-size: 14px;
+  padding: 20px 24px;
+  font-size: 16px;
 }
 
 /* Safe area for brand + nav */
@@ -85,7 +85,7 @@ footer {
 }
 
 .brand {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--text);
   white-space: nowrap;
@@ -94,13 +94,13 @@ footer {
 nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 26px;
 }
 
 nav a {
   text-decoration: none;
   color: var(--link);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -323,7 +323,8 @@ footer {
 @media (max-width: 768px) {
 
   .site-header {
-    padding: 16px 18px;
+    padding: 18px 18px;
+    font-size: 15px;
   }
 
   .header-left {
@@ -334,6 +335,7 @@ footer {
 
   .brand {
     margin-bottom: 14px;
+    font-size: 16px;
   }
 
   nav {
@@ -341,7 +343,7 @@ footer {
     overflow-x: auto;
     white-space: nowrap;
 
-    gap: 16px;
+    gap: 18px;
     width: 100%;
 
     padding-bottom: 10px;
@@ -349,7 +351,7 @@ footer {
 
   nav a {
     flex-shrink: 0;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   nav::-webkit-scrollbar {
