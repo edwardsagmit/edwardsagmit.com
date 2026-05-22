@@ -109,8 +109,11 @@ nav a:hover {
 /* Floating dark mode toggle */
 .theme-toggle {
   position: fixed;
+
   right: 24px;
-  bottom: 24px;
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  /* bottom keeps distance from phone browser/home indicator area */
+
   z-index: 999;
 
   width: 72px;
@@ -349,7 +352,9 @@ footer {
 
   .theme-toggle {
     right: 16px;
-    bottom: 16px;
+
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    /* increases bottom clearance on mobile */
 
     width: 66px;
     height: 36px;
