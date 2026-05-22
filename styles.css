@@ -11,98 +11,131 @@ body {
   );
 
   background-attachment: fixed;
-  /* keeps gradient visually steady while scrolling */
-
   color: #111827;
-  /* main text color for light background */
 }
 
-header {
-  text-align: center;
-
-  padding: 20px 20px 20px;
-  /*        top   sides bottom */
+/* main page width */
+main,
+.site-header,
+footer {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-h1 {
-  font-size: 48px;
-  /* main name size */
+/* top header, closer to reference */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  margin: 0;
+  padding: 18px 24px;
+  /*        top/bottom sides */
+
+  font-size: 13px;
+}
+
+.brand {
   font-weight: 700;
   color: #111827;
 }
 
-header p {
-  margin-top: 10px;
-  /* space under name */
-
-  color: #6b7280;
-  /* muted subtitle text */
-}
-
+/* desktop nav */
 nav {
-  margin-top: 40px;
-
-  border-top: 1px solid #d1d5db;
-  border-bottom: 1px solid #d1d5db;
-
-  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  /* spacing between nav items */
 }
 
 nav a {
-  margin: 0 15px;
   text-decoration: none;
-
   color: #111827;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
 }
 
 nav a:hover {
   color: #2563eb;
-  /* hover accent */
 }
 
-main {
-  text-align: center;
+/* intro area */
+.intro {
+  padding: 45px 24px 28px;
+  /*        top sides bottom */
 
-  padding: 20px 20px;
+  max-width: 760px;
 }
 
-main h2 {
-  font-size: 42px;
-  margin-bottom: 20px;
+.eyebrow {
+  margin: 0 0 18px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.intro h1 {
+  margin: 0;
+
+  font-size: 48px;
+  /* main headline size */
+
+  line-height: 1.05;
+  letter-spacing: -1.5px;
   color: #111827;
 }
 
-main p {
-  max-width: 600px;
-  margin: auto;
+.lead {
+  margin-top: 18px;
+  max-width: 650px;
 
   color: #4b5563;
+  font-size: 16px;
   line-height: 1.6;
 }
 
+/* hero image */
 .hero {
-  margin: 30px auto;
-  max-width: 900px;
+  padding: 0 24px;
+  margin: 20px auto 50px;
+  /*      top auto bottom */
 }
 
 .hero img {
   width: 100%;
-  border-radius: 6px;
   display: block;
 
+  border-radius: 2px;
+
   box-shadow: 0 20px 40px rgba(17, 24, 39, 0.12);
-  /* soft shadow similar to clean editorial/reference style */
 }
 
+/* artificial long content sections */
+.test-section {
+  padding: 34px 24px;
+  /* controls spacing of each test block */
+
+  border-top: 1px solid #d1d5db;
+
+  max-width: 760px;
+}
+
+.test-section h2 {
+  margin: 0 0 12px;
+
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.test-section p {
+  margin: 0;
+
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* footer */
 footer {
-  text-align: center;
-
-  padding: 40px 20px;
-
+  padding: 50px 24px;
   border-top: 1px solid #d1d5db;
 
   font-size: 14px;
@@ -116,62 +149,56 @@ footer {
 
 @media (max-width: 768px) {
 
-  h1 {
-    font-size: 32px;
-    /* smaller name on mobile */
+  .site-header {
+    display: block;
+    padding: 16px 18px;
   }
 
-  main h2 {
-    font-size: 26px;
-    /* smaller headline on mobile */
+  .brand {
+    margin-bottom: 14px;
   }
 
-  header {
-    padding: 15px 15px 10px;
-    /* tighter header spacing */
-  }
-
-  main {
-    padding: 15px 15px;
-    /* tighter body spacing */
-  }
-
-  .hero {
-    margin: 20px auto;
-  }
-
-  footer {
-    padding: 20px 15px;
-  }
-
-  /* mobile nav: horizontal, one line, scrollable */
   nav {
-    margin-top: 20px;
-
     display: flex;
-    /* makes nav horizontal */
-
     overflow-x: auto;
-    /* allows sideways scroll if items do not fit */
-
     white-space: nowrap;
-    /* prevents nav items from wrapping */
 
-    gap: 15px;
-    /* spacing between nav links */
-
-    padding: 10px 10px;
+    gap: 16px;
+    padding-bottom: 6px;
   }
 
   nav a {
-    margin: 0;
-
     flex-shrink: 0;
-    /* prevents nav items from squeezing */
+    font-size: 13px;
   }
 
-  /* hides scrollbar on mobile nav for cleaner look */
   nav::-webkit-scrollbar {
     display: none;
+  }
+
+  .intro {
+    padding: 34px 18px 24px;
+  }
+
+  .intro h1 {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+
+  .lead {
+    font-size: 15px;
+  }
+
+  .hero {
+    padding: 0 18px;
+    margin: 14px auto 36px;
+  }
+
+  .test-section {
+    padding: 28px 18px;
+  }
+
+  footer {
+    padding: 36px 18px;
   }
 }
