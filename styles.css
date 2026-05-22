@@ -12,6 +12,7 @@
   --link-hover: #2563eb;
   --shadow: rgba(17, 24, 39, 0.12);
 
+  /* TOGGLE COLORS */
   --toggle-bg: #ffffff;
   --toggle-border: #d1d5db;
   --toggle-circle: #ffffff;
@@ -32,6 +33,7 @@ body.dark-mode {
   --link-hover: #60a5fa;
   --shadow: rgba(0, 0, 0, 0.35);
 
+  /* TOGGLE COLORS */
   --toggle-bg: #2f3033;
   --toggle-border: #2f3033;
   --toggle-circle: #ffffff;
@@ -104,25 +106,40 @@ nav a:hover {
   color: var(--link-hover);
 }
 
-/* Pill dark mode toggle */
+/* Floating dark mode toggle */
 .theme-toggle {
-  width: 70px;
-  height: 36px;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999;
+
+  width: 72px;
+  height: 38px;
 
   border: 1px solid var(--toggle-border);
   border-radius: 999px;
 
   background: var(--toggle-bg);
 
-  padding: 3px;
+  padding: 4px;
   cursor: pointer;
 
   display: flex;
   align-items: center;
 
-  transition: background 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
 }
 
+.theme-toggle:hover {
+  transform: translateY(-2px);
+}
+
+/* White circle inside the toggle */
 .toggle-circle {
   width: 28px;
   height: 28px;
@@ -134,21 +151,82 @@ nav a:hover {
   align-items: center;
   justify-content: center;
 
+  position: relative;
+
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 
   transform: translateX(0);
   transition: transform 0.25s ease;
 }
 
-.toggle-icon {
-  color: var(--toggle-icon);
-  font-size: 17px;
-  line-height: 1;
-}
-
 /* Move circle to the right in dark mode */
 body.dark-mode .toggle-circle {
   transform: translateX(34px);
+}
+
+/* Icon container */
+.toggle-icon {
+  width: 16px;
+  height: 16px;
+
+  display: block;
+  position: relative;
+}
+
+/* LIGHT MODE ICON: flat black sun */
+.toggle-icon::before {
+  content: "";
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  top: 4px;
+  left: 4px;
+
+  background: var(--toggle-icon);
+  border-radius: 50%;
+
+  box-shadow:
+    0 -7px 0 -3px var(--toggle-icon),
+    0 7px 0 -3px var(--toggle-icon),
+    7px 0 0 -3px var(--toggle-icon),
+    -7px 0 0 -3px var(--toggle-icon),
+    5px 5px 0 -3px var(--toggle-icon),
+    -5px 5px 0 -3px var(--toggle-icon),
+    5px -5px 0 -3px var(--toggle-icon),
+    -5px -5px 0 -3px var(--toggle-icon);
+}
+
+/* DARK MODE ICON: flat black filled crescent */
+body.dark-mode .toggle-icon::before {
+  content: "";
+  position: absolute;
+
+  width: 14px;
+  height: 14px;
+
+  top: 1px;
+  left: 1px;
+
+  background: var(--toggle-icon);
+  border-radius: 50%;
+
+  box-shadow: none;
+}
+
+body.dark-mode .toggle-icon::after {
+  content: "";
+  position: absolute;
+
+  width: 14px;
+  height: 14px;
+
+  top: -1px;
+  left: 5px;
+
+  background: var(--toggle-circle);
+  border-radius: 50%;
 }
 
 /* Intro area */
@@ -270,10 +348,11 @@ footer {
   }
 
   .theme-toggle {
-    margin-top: 6px;
+    right: 16px;
+    bottom: 16px;
 
-    width: 64px;
-    height: 34px;
+    width: 66px;
+    height: 36px;
   }
 
   .toggle-circle {
@@ -283,6 +362,35 @@ footer {
 
   body.dark-mode .toggle-circle {
     transform: translateX(30px);
+  }
+
+  .toggle-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .toggle-icon::before {
+    width: 7px;
+    height: 7px;
+
+    top: 4px;
+    left: 4px;
+  }
+
+  body.dark-mode .toggle-icon::before {
+    width: 13px;
+    height: 13px;
+
+    top: 1px;
+    left: 1px;
+  }
+
+  body.dark-mode .toggle-icon::after {
+    width: 13px;
+    height: 13px;
+
+    top: -1px;
+    left: 5px;
   }
 
   .intro {
