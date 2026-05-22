@@ -2,10 +2,19 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
 
-  /* background look */
-  background: radial-gradient(circle at center, #1e2a3a 0%, #0f172a 70%);
-  
-  color: #e5e7eb; /* main text */
+  /* page background: off-white at top, light silver lower down */
+  background: linear-gradient(
+    to bottom,
+    #fafafa 0%,     /* top: off-white */
+    #f3f4f6 45%,    /* middle: very light gray */
+    #e5e7eb 100%    /* bottom: light silver */
+  );
+
+  background-attachment: fixed;
+  /* keeps gradient visually steady while scrolling */
+
+  color: #111827;
+  /* main text color for light background */
 }
 
 header {
@@ -16,21 +25,27 @@ header {
 }
 
 h1 {
-  font-size: 48px; /* main name size */
+  font-size: 48px;
+  /* main name size */
+
   margin: 0;
-  font-weight: 600;
+  font-weight: 700;
+  color: #111827;
 }
 
 header p {
-  margin-top: 10px; /* space under name */
-  color: #94a3b8;
+  margin-top: 10px;
+  /* space under name */
+
+  color: #6b7280;
+  /* muted subtitle text */
 }
 
 nav {
   margin-top: 40px;
 
-  border-top: 1px solid #1f2937;
-  border-bottom: 1px solid #1f2937;
+  border-top: 1px solid #d1d5db;
+  border-bottom: 1px solid #d1d5db;
 
   padding: 15px 0;
 }
@@ -38,12 +53,15 @@ nav {
 nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #cbd5f5;
+
+  color: #111827;
   font-size: 14px;
+  font-weight: 500;
 }
 
 nav a:hover {
-  color: #60a5fa;
+  color: #2563eb;
+  /* hover accent */
 }
 
 main {
@@ -55,13 +73,14 @@ main {
 main h2 {
   font-size: 42px;
   margin-bottom: 20px;
+  color: #111827;
 }
 
 main p {
   max-width: 600px;
   margin: auto;
 
-  color: #9ca3af;
+  color: #4b5563;
   line-height: 1.6;
 }
 
@@ -73,6 +92,10 @@ main p {
 .hero img {
   width: 100%;
   border-radius: 6px;
+  display: block;
+
+  box-shadow: 0 20px 40px rgba(17, 24, 39, 0.12);
+  /* soft shadow similar to clean editorial/reference style */
 }
 
 footer {
@@ -80,33 +103,37 @@ footer {
 
   padding: 40px 20px;
 
-  border-top: 1px solid #1f2937;
+  border-top: 1px solid #d1d5db;
 
   font-size: 14px;
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 
 /* ========================= */
-/* ✅ MOBILE / SMALL SCREENS */
+/* MOBILE / SMALL SCREENS */
 /* ========================= */
 
 @media (max-width: 768px) {
 
   h1 {
     font-size: 32px;
+    /* smaller name on mobile */
   }
 
   main h2 {
     font-size: 26px;
+    /* smaller headline on mobile */
   }
 
   header {
     padding: 15px 15px 10px;
+    /* tighter header spacing */
   }
 
   main {
     padding: 15px 15px;
+    /* tighter body spacing */
   }
 
   .hero {
@@ -117,34 +144,33 @@ footer {
     padding: 20px 15px;
   }
 
-  /* ✅ FIXED NAV (HORIZONTAL) */
+  /* mobile nav: horizontal, one line, scrollable */
   nav {
     margin-top: 20px;
 
     display: flex;
-    /* force horizontal */
+    /* makes nav horizontal */
 
     overflow-x: auto;
-    /* allows sideways scroll */
+    /* allows sideways scroll if items do not fit */
 
     white-space: nowrap;
-    /* prevent wrapping */
+    /* prevents nav items from wrapping */
 
     gap: 15px;
-    /* spacing between items */
+    /* spacing between nav links */
 
     padding: 10px 10px;
   }
 
   nav a {
     margin: 0;
-    /* remove old spacing */
 
     flex-shrink: 0;
-    /* prevents items from shrinking */
+    /* prevents nav items from squeezing */
   }
 
-  /* ✅ OPTIONAL: hide scroll bar (cleaner look) */
+  /* hides scrollbar on mobile nav for cleaner look */
   nav::-webkit-scrollbar {
     display: none;
   }
