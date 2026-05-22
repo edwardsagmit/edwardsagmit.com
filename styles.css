@@ -67,8 +67,8 @@ footer {
   width: 100%;
   box-sizing: border-box;
 
-  padding: 16px 24px;
-  font-size: 13px;
+  padding: 18px 24px;
+  font-size: 14px;
 }
 
 /* Safe area for brand + nav */
@@ -85,6 +85,7 @@ footer {
 }
 
 .brand {
+  font-size: 14px;
   font-weight: 700;
   color: var(--text);
   white-space: nowrap;
@@ -99,7 +100,7 @@ nav {
 nav a {
   text-decoration: none;
   color: var(--link);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -245,7 +246,7 @@ body.dark-mode .toggle-icon::after {
 .eyebrow {
   margin: 0 0 18px;
   color: var(--soft-muted);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .intro h1 {
@@ -263,8 +264,8 @@ body.dark-mode .toggle-icon::after {
   max-width: 650px;
 
   color: var(--muted);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.65;
 }
 
 /* Hero image */
@@ -348,7 +349,7 @@ footer {
 
   nav a {
     flex-shrink: 0;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   nav::-webkit-scrollbar {
@@ -421,7 +422,7 @@ footer {
   }
 
   .lead {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .hero {
